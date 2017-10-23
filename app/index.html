@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>AR Demo</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="css/main.css"/>
+
+  <!-- scripts -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+  <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+</head>
+<body>
+<a-scene embedded artoolkit="sourceType: webcam;">
+
+  <a-asset>
+    <img id="my-image" src="img/1-taj.jpg"/>
+  </a-asset>
+
+  <a-image src="#my-image"></a-image>
+
+  <a-marker-camera preset="hiro"></a-marker-camera>
+</a-scene>
+
+</body>
+</html>
