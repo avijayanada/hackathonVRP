@@ -11,22 +11,48 @@
 
   <!-- scripts -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="js/main.js"></script>
+
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
   <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 </head>
 <body>
-<a-scene embedded artoolkit="sourceType: webcam;">
+<!--<a-scene embedded artoolkit="sourceType: webcam;">
 
   <a-asset>
-    <img id="my-image" src="img/1-taj.jpg"/>
+    <img id="texture" src="img/1-taj.jpg"/>
   </a-asset>
-  
-  <a-image src="#my-image"></a-image>
+
+  &lt;!&ndash; Textured box. &ndash;&gt;
+  <a-box id="taj" src="#texture"></a-box>
+  <a-entity text="value: Taj Mahal;"></a-entity>
+  <a-marker-camera preset="hiro"></a-marker-camera>
+
+</a-scene>-->
+
+<a-scene main embedded artoolkit="sourceType: webcam;">
+
+  <a-asset>
+    <img id="texture" src="img/1-taj.jpg"/>
+    <img id="pattern" src="img/pattern.jpg"/>
+  </a-asset>
+
+  <!-- Textured box. -->
+  <a-box height="3" width="5" opacity="0.3">
+    <a-text value="Taj Mahal" geometry="primitive:plane" align="right" color="red"></a-text>
+    <a-box id="taj" src="#texture" height="2" width="2">
+    </a-box>
+  </a-box>
+
 
   <a-marker-camera preset="hiro"></a-marker-camera>
+
 </a-scene>
+
+
+
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
